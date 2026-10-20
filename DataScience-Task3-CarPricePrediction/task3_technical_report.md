@@ -9,7 +9,7 @@
 ## 1. Executive Summary & Business Context
 In automotive retail, digital marketplaces, and auto-financing fintechs (e.g., Kuda Bank asset financing, Car45, Cars24), establishing fair market valuation for used vehicles is a core operational challenge. Manual pricing leads to valuation variance, mispriced loan collateral, and delayed inventory turnover.
 
-This project implements an end-to-end predictive machine learning solution using the **Cardekho dataset** (15,411 historical vehicle transaction records across 14 attributes). By comparing a baseline linear parametric model against an ensemble tree-based algorithm, we achieved an **$R^2$ accuracy score of 0.9383 (93.83%)** using a **Random Forest Regressor**, successfully predicting vehicle market values within an average margin of error (MAE) of **₹99,796.98 (approx. ₦1.84M)**.
+This project implements an end-to-end predictive machine learning solution using the Cardekho dataset (15,411 historical vehicle transaction records across 14 attributes). By comparing a baseline linear parametric model against an ensemble tree-based algorithm, we achieved an **$R^2$ accuracy score of 0.9383 (93.83%) using a Random Forest Regressor, successfully predicting vehicle market values within an average margin of error (MAE) of ₹99,796.98 (approx. ₦1.84M).
 
 Furthermore, an interactive **Jupyter Dashboard Widget** was engineered to allow instant real-time valuation in both Indian Rupees (INR) and localized Nigerian Naira (NGN).
 
@@ -19,19 +19,19 @@ Furthermore, an interactive **Jupyter Dashboard Widget** was engineered to allow
 
 ### 2.1 Raw Data Structure
 The raw dataset comprised 15,411 rows and 14 columns:
-* **Categorical Features:** `car_name`, `brand`, `model`, `seller_type`, `fuel_type`, `transmission_type`.
-* **Numerical Features:** `vehicle_age`, `km_driven`, `mileage`, `engine`, `max_power`, `seats`.
+* **Categorical Features:** car_name, brand, model, seller_type, fuel_type, transmission_type.
+* **Numerical Features:** vehicle_age`, km_driven`, mileage`, engine`, max_power`, `seats`.
 * **Target Variable ($y$):** `selling_price`.
 
 ### 2.2 Data Quality Audit & Outlier Removal
-During data inspection via `df.info()` and descriptive statistics, an extreme anomaly was flagged at **Row 15409 (Mahindra XUV500)**:
+During data inspection via df.info() and descriptive statistics, an extreme anomaly was flagged at **Row 15409 (Mahindra XUV500)**:
 * **Vehicle Age:** 5 years ($\approx 1,825$ days)
 * **Kilometers Driven:** **3,800,000 km** ($\approx 2,082$ km driven per day, non-stop).
 
 **Resolution:** An outlier filtering threshold was established at `km_driven <= 1,000,000`. This eliminated two physically impossible data entry errors, preventing skewness in loss functions during optimization.
 
 ### 2.3 Feature Preprocessing & One-Hot Encoding
-Machine learning algorithms require numerical input matrices. Non-numeric columns (`seller_type`, `fuel_type`, `transmission_type`) were encoded using **One-Hot Encoding** (`pd.get_dummies(X, drop_first=True)`). High-cardinality metadata (`car_name`, `model`) were dropped to prevent curse-of-dimensionality overfitting.
+Machine learning algorithms require numerical input matrices. Non-numeric columns (seller_type, fuel_type`, transmission_type) were encoded using **One-Hot Encoding** (`pd.get_dummies(X, drop_first=True)`). High-cardinality metadata (`car_name`, `model`) were dropped to prevent curse-of-dimensionality overfitting.
 
 * **Original Feature Space:** 13 variables
 * **Encoded Feature Space ($X$):** 44 features
@@ -76,7 +76,7 @@ Machine learning algorithms require numerical input matrices. Non-numeric column
 * **Use Random Forest when:** Predictive accuracy is the primary objective, feature interactions are multi-dimensional, and dataset features consist of mixed types (categorical + continuous).
 
 #### Q3: In Train-Test Split, is 80/20 mandatory? What about 70/30?
-**Answer:** No split ratio is mathematically compulsory. 80/20, 70/30, and 75/25 are standard empirical choices. In `scikit-learn`, `test_size` accepts a float decimal between 0.0 and 1.0 representing the proportion of test samples. Passing `test_size=0.3` allocates 30% to testing and 70% to training. Passing an integer like `30` allocates exactly 30 individual samples to testing.
+**Answer:** No split ratio is mathematically compulsory. 80/20, 70/30, and 75/25 are standard empirical choices. In scikit-learn`, `test_size accepts a float decimal between 0.0 and 1.0 representing the proportion of test samples. Passing `test_size=0.3` allocates 30% to testing and 70% to training. Passing an integer like `30` allocates exactly 30 individual samples to testing.
 
 ---
 
@@ -102,8 +102,8 @@ Extraction of tree Gini impurity reduction scores revealed the top 5 drivers of 
 
 ## 6. Interactive Dashboard & Deployment
 
-To translate model output into business utility, a native **Jupyter Dashboard Widget** (`ipywidgets`) was built:
-* **Inputs:** Sliders for `Year` (age conversion) and `Seats`; numeric text boxes for `KM Driven`, `Mileage`, `Engine (CC)`, `Max Power`; dropdowns for `Fuel Type`, `Seller Type`, `Transmission`.
+To translate model output into business utility, a native **Jupyter Dashboard Widget** (`ipywidgets) was built:
+* **Inputs:** Sliders for Year (age conversion) and Seats; numeric text boxes for `KM Driven, `Mileage, Engine (CC)`, `Max Power`; dropdowns for Fuel Type, Seller Type, Transmission`.
 * **Backend:** Serialized model loading (`pickle.load()`), dynamic one-hot input matrix construction matching training schema `(1, 44)`.
 * **Output:** Instant valuation card displaying price in **INR (₹)** and real-time conversion to **NGN (₦)** at current exchange benchmarks.
 
