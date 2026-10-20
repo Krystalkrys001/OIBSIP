@@ -28,14 +28,14 @@ The project concludes with an **interactive Jupyter Dashboard Widget** that enab
 | **Random Forest Regressor** | **₹99,796.98** | **₹211,364.70** | **`0.9383` (93.83%)** |
 
 ### Key Analytical Insights:
-* **Top Value Driver:** Engine horsepower (`max_power`) contributes over **65%** of the relative predictive power in valuation.
-* **Depreciation Decay:** `vehicle_age` and `km_driven` follow non-linear decay curves, which tree-based ensemble models capture significantly better than linear lines.
+* **Top Value Driver:** Engine horsepower (max_power) contributes over **65%** of the relative predictive power in valuation.
+* **Depreciation Decay:** vehicle_age and km_driven follow non-linear decay curves, which tree-based ensemble models capture significantly better than linear lines.
 * **Outlier Auditing:** Identified and filtered severe data entry errors (e.g., a 5-year-old vehicle claiming 3.8 million kilometers driven).
 
 ---
 
 ## 💡 Interactive Dashboard Preview
-The project includes a custom UI built using `ipywidgets` and HTML/CSS rendering inside Jupyter Notebooks:
+The project includes a custom UI built using ipywidgets and HTML/CSS rendering inside Jupyter Notebooks:
 
 ```
 +-----------------------------------------------------------------------+
