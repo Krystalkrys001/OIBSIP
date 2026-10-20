@@ -20,18 +20,18 @@ Furthermore, an interactive **Jupyter Dashboard Widget** was engineered to allow
 ### 2.1 Raw Data Structure
 The raw dataset comprised 15,411 rows and 14 columns:
 * **Categorical Features:** car_name, brand, model, seller_type, fuel_type, transmission_type.
-* **Numerical Features:** vehicle_age`, km_driven`, mileage`, engine`, max_power`, `seats`.
-* **Target Variable ($y$):** `selling_price`.
+* **Numerical Features:** vehicle_age`, km_driven, mileage, engine, max_power, seats.
+* **Target Variable ($y$):** selling_price.
 
 ### 2.2 Data Quality Audit & Outlier Removal
 During data inspection via df.info() and descriptive statistics, an extreme anomaly was flagged at **Row 15409 (Mahindra XUV500)**:
 * **Vehicle Age:** 5 years ($\approx 1,825$ days)
 * **Kilometers Driven:** **3,800,000 km** ($\approx 2,082$ km driven per day, non-stop).
 
-**Resolution:** An outlier filtering threshold was established at `km_driven <= 1,000,000`. This eliminated two physically impossible data entry errors, preventing skewness in loss functions during optimization.
+**Resolution:** An outlier filtering threshold was established at km_driven <= 1,000,000. This eliminated two physically impossible data entry errors, preventing skewness in loss functions during optimization.
 
 ### 2.3 Feature Preprocessing & One-Hot Encoding
-Machine learning algorithms require numerical input matrices. Non-numeric columns (seller_type, fuel_type`, transmission_type) were encoded using **One-Hot Encoding** (`pd.get_dummies(X, drop_first=True)`). High-cardinality metadata (`car_name`, `model`) were dropped to prevent curse-of-dimensionality overfitting.
+Machine learning algorithms require numerical input matrices. Non-numeric columns (seller_type, fuel_type, transmission_type) were encoded using **One-Hot Encoding** (pd.get_dummies(X, drop_first=True)). High-cardinality metadata (car_name, model) were dropped to prevent curse-of-dimensionality overfitting.
 
 * **Original Feature Space:** 13 variables
 * **Encoded Feature Space ($X$):** 44 features
@@ -41,13 +41,13 @@ Machine learning algorithms require numerical input matrices. Non-numeric column
 
 ## 3. Exploratory Data Analysis (EDA) Key Insights
 
-1. **Price Skewness:** The `selling_price` distribution exhibits a right-skewed log-normal shape. The vast majority of transaction volumes occur under ₹1,000,000, with a sparse tail of high-value luxury models stretching up to ₹40,000,000.
+1. **Price Skewness:** The selling_price distribution exhibits a right-skewed log-normal shape. The vast majority of transaction volumes occur under ₹1,000,000, with a sparse tail of high-value luxury models stretching up to ₹40,000,000.
 2. **Fuel Type Dynamics:** Electric and Diesel variants exhibit higher median prices compared to Petrol, LPG, and CNG models.
 3. **Correlation Matrix Findings:**
-   * **`max_power` vs `selling_price`:** **$+0.75$** (Strongest positive driver of value).
-   * **`engine` size vs `selling_price`:** **$+0.59$** (Moderate-strong positive correlation).
-   * **`mileage` vs `engine` size:** **$-0.63$** (Strong negative inverse relationship; larger engines yield lower fuel efficiency).
-   * **`mileage` vs `selling_price`:** **$-0.31$** (Negative correlation; fuel economy is prioritized in budget segments rather than luxury segments).
+   * **max_power vs `selling_price:** **$+0.75$** (Strongest positive driver of value).
+   * **engine size vs selling_price:** **$+0.59$** (Moderate-strong positive correlation).
+   * **mileage vs engine` size:** **$-0.63$** (Strong negative inverse relationship; larger engines yield lower fuel efficiency).
+   * **mileage vs selling_price:** **$-0.31$** (Negative correlation; fuel economy is prioritized in budget segments rather than luxury segments).
 
 ---
 
@@ -76,7 +76,7 @@ Machine learning algorithms require numerical input matrices. Non-numeric column
 * **Use Random Forest when:** Predictive accuracy is the primary objective, feature interactions are multi-dimensional, and dataset features consist of mixed types (categorical + continuous).
 
 #### Q3: In Train-Test Split, is 80/20 mandatory? What about 70/30?
-**Answer:** No split ratio is mathematically compulsory. 80/20, 70/30, and 75/25 are standard empirical choices. In scikit-learn`, `test_size accepts a float decimal between 0.0 and 1.0 representing the proportion of test samples. Passing `test_size=0.3` allocates 30% to testing and 70% to training. Passing an integer like `30` allocates exactly 30 individual samples to testing.
+**Answer:** No split ratio is mathematically compulsory. 80/20, 70/30, and 75/25 are standard empirical choices. In scikit-learn, test_size accepts a float decimal between 0.0 and 1.0 representing the proportion of test samples. Passing test_size=0.3 allocates 30% to testing and 70% to training. Passing an integer like 30 allocates exactly 30 individual samples to testing.
 
 ---
 
@@ -86,25 +86,25 @@ Both models were evaluated on identical, unseen test datasets ($N = 3,082$ vehic
 
 | Evaluation Metric | Linear Regression Baseline | Random Forest Regressor | Performance Delta / Improvement |
 | :--- | :--- | :--- | :--- |
-| **Mean Absolute Error (MAE)** | ₹212,123.08 | **₹99,796.98** | **52.95% Error Reduction** 📉 |
-| **Root Mean Squared Error (RMSE)** | ₹427,863.91 | **₹211,364.70** | **50.60% Error Reduction** 📉 |
-| **$R^2$ Score (Variance Explained)** | 0.7473 (74.73%) | **0.9383 (93.83%)** | **+19.10% Accuracy Gain** 🚀 |
+| **Mean Absolute Error (MAE)** | ₹212,123.08 | **₹99,796.98** | **52.95% Error Reduction**  |
+| **Root Mean Squared Error (RMSE)** | ₹427,863.91 | **₹211,364.70** | **50.60% Error Reduction** |
+| **$R^2$ Score (Variance Explained)** | 0.7473 (74.73%) | **0.9383 (93.83%)** | **+19.10% Accuracy Gain**  |
 
 ### 5.1 Feature Importance Findings
 Extraction of tree Gini impurity reduction scores revealed the top 5 drivers of used car value:
-1. **`max_power` (BHP):** Contributes over **65%** of relative predictive power.
-2. **`vehicle_age`:** Second strongest factor (depreciation decay).
-3. **`mileage`:** Fuel efficiency factor.
-4. **`km_driven`:** Total engine wear usage.
+1. **max_power (BHP):** Contributes over **65%** of relative predictive power.
+2. **vehicle_age:** Second strongest factor (depreciation decay).
+3. **mileage:** Fuel efficiency factor.
+4. **km_driven:** Total engine wear usage.
 5. **Luxury Brand Identifiers:** Brands like *Ferrari, Land Rover, Mercedes-Benz, Rolls-Royce* act as heavy step-up multipliers.
 
 ---
 
 ## 6. Interactive Dashboard & Deployment
 
-To translate model output into business utility, a native **Jupyter Dashboard Widget** (`ipywidgets) was built:
-* **Inputs:** Sliders for Year (age conversion) and Seats; numeric text boxes for `KM Driven, `Mileage, Engine (CC)`, `Max Power`; dropdowns for Fuel Type, Seller Type, Transmission`.
-* **Backend:** Serialized model loading (`pickle.load()`), dynamic one-hot input matrix construction matching training schema `(1, 44)`.
+To translate model output into business utility, a native **Jupyter Dashboard Widget** (ipywidgets) was built:
+* **Inputs:** Sliders for Year (age conversion) and Seats; numeric text boxes for `KM Driven, Mileage, Engine (CC), Max Power; dropdowns for Fuel Type, Seller Type, Transmission`.
+* **Backend:** Serialized model loading (pickle.load()), dynamic one-hot input matrix construction matching training schema (1, 44).
 * **Output:** Instant valuation card displaying price in **INR (₹)** and real-time conversion to **NGN (₦)** at current exchange benchmarks.
 
 ---
