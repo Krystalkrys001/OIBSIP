@@ -103,7 +103,7 @@ Extraction of tree Gini impurity reduction scores revealed the top 5 drivers of 
 ## 6. Interactive Dashboard & Deployment
 
 To translate model output into business utility, a native **Jupyter Dashboard Widget** (ipywidgets) was built:
-* **Inputs:** Sliders for Year (age conversion) and Seats; numeric text boxes for `KM Driven, Mileage, Engine (CC), Max Power; dropdowns for Fuel Type, Seller Type, Transmission`.
+* **Inputs:** Sliders for Year (age conversion) and Seats; numeric text boxes for KM Driven, Mileage, Engine (CC), Max Power; dropdowns for Fuel Type, Seller Type, Transmission.
 * **Backend:** Serialized model loading (pickle.load()), dynamic one-hot input matrix construction matching training schema (1, 44).
 * **Output:** Instant valuation card displaying price in **INR (₹)** and real-time conversion to **NGN (₦)** at current exchange benchmarks.
 
