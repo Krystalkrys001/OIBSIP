@@ -1,4 +1,4 @@
-# 🚗 Car Price Prediction with Machine Learning (OIBSIP Task 3)
+#  Car Price Prediction with Machine Learning (OIBSIP Task 3)
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
@@ -11,7 +11,7 @@
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 Accurate used car pricing is a vital asset for automotive e-commerce platforms, auto-financing fintechs, and insurance underwriters. This project builds a production-grade machine learning regression pipeline on the **Cardekho Dataset** (15,411 historical transaction records) to predict vehicle market prices based on physical specs, usage metrics, and brand positioning.
 
 Comparing a baseline **Linear Regression** model against an ensemble **Random Forest Regressor**, the final pipeline achieves an **$R^2$ accuracy score of 0.9383 (93.83%)**, cutting average prediction errors down to under **₹100,000 (₦1.8M)**.
@@ -34,12 +34,12 @@ The project concludes with an **interactive Jupyter Dashboard Widget** that enab
 
 ---
 
-## 💡 Interactive Dashboard Preview
+##  Interactive Dashboard Preview
 The project includes a custom UI built using ipywidgets and HTML/CSS rendering inside Jupyter Notebooks:
 
 ```
 +-----------------------------------------------------------------------+
-| 🚗 Used Car Price Predictor Dashboard                                 |
+|  Used Car Price Predictor Dashboard                                 |
 +------------------------------------+----------------------------------+
 | Year: [=====o====================] | Engine (CC): [  1200  ]          |
 | KM Driven: [ 50000 ]               | Max Power (BHP): [ 85.0 ]        |
@@ -49,7 +49,7 @@ The project includes a custom UI built using ipywidgets and HTML/CSS rendering i
 +------------------------------------+----------------------------------+
 |               [ Calculate Estimated Value ]                           |
 +-----------------------------------------------------------------------+
-| 🚗 Valuation Complete!                                                |
+|  Valuation Complete!                                                |
 | Estimated Market Value (INR): ₹550,000.00                             |
 | Estimated Nigerian Market Value (NGN): ₦10,175,000.00                 |
 +-----------------------------------------------------------------------+
@@ -57,7 +57,7 @@ The project includes a custom UI built using ipywidgets and HTML/CSS rendering i
 
 ---
 
-## 🛠️ Repository Structure
+##  Repository Structure
 
 ```
 OIBSIP/
@@ -73,7 +73,7 @@ OIBSIP/
 
 ---
 
-## 🚀 Quickstart & Setup Guide
+##  Quickstart & Setup Guide
 
 ### 1. Prerequisites
 Ensure Python 3.8+ is installed on your machine along with Jupyter Notebook or JupyterLab.
