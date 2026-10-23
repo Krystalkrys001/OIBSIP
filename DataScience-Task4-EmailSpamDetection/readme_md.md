@@ -63,7 +63,7 @@ OIBSIP/
    ```
 
 3. **Run the Notebook:**
-   Open `email_spam_detection.ipynb` in Jupyter Notebook or Google Colab and run all cells.
+   Open email_spam_detection.ipynb in Jupyter Notebook or Google Colab and run all cells.
 
 ---
 
