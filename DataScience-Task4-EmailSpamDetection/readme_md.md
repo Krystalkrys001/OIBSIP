@@ -20,9 +20,9 @@ Email communication is a core tool in modern daily interactions, but it is frequ
 ## 🛠️ Tech Stack & Dependencies
 
 - **Language:** Python
-- **Data Manipulation:** `pandas`, `numpy`
-- **Data Visualization:** `matplotlib`, `seaborn`, `wordcloud`
-- **Machine Learning & NLP:** `scikit-learn` (`CountVectorizer`, `TF-IDF`, Naive Bayes, Logistic Regression, SVM)
+- **Data Manipulation:** pandas, numpy
+- **Data Visualization:** matplotlib, seaborn, wordcloud
+- **Machine Learning & NLP:** scikit-learn (CountVectorizer, TF-IDF, Naive Bayes, Logistic Regression, SVM)
 
 ---
 
@@ -31,8 +31,8 @@ Email communication is a core tool in modern daily interactions, but it is frequ
 1. **Class Distribution:** Analyzed the proportion of legitimate (ham) vs. unwanted (spam) messages to handle class imbalance appropriately.
 2. **Text Feature Analysis:** Extracted word frequencies and key features across categories.
 3. **Word Cloud Visualizations:**
-   - **Ham Messages (Blue):** Predominated by conversational, everyday vocabulary such as `ok`, `got`, `come`, `love`, `time`, `good`, and `need`.
-   - **Spam Messages (Red/Dark):** Predominated by high-urgency and promotional keywords such as `free`, `call`, `text`, `reply`, `mobile`, `prize`, `cash`, and `urgent`.
+   - **Ham Messages (Blue):** Predominated by conversational, everyday vocabulary such as ok, got, come, love, time, good, and need.
+   - **Spam Messages (Red/Dark):** Predominated by high-urgency and promotional keywords such as free, call, text, reply, mobile, `prize, cash, and urgent.
 
 ---
 
