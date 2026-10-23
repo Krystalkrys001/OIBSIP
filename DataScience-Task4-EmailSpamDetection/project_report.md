@@ -4,7 +4,7 @@
 The objective of this project is to build an efficient automated classification system capable of distinguishing between legitimate emails ("ham") and unsolicited bulk or fraudulent messages ("spam"). By leveraging Natural Language Processing (NLP) and supervised machine learning algorithms, the system learns statistical patterns in text to perform high-accuracy predictions.
 
 ## 2. Dataset Description
-The dataset (`spam.csv`) consists of labeled SMS and email messages categorized into two classes:
+The dataset (spam.csv) consists of labeled SMS and email messages categorized into two classes:
 - **Ham**: Non-spam legitimate communications.
 - **Spam**: Unwanted advertising, promotional offers, or security threats.
 
@@ -17,8 +17,8 @@ The dataset (`spam.csv`) consists of labeled SMS and email messages categorized 
 ## 3. Visual Analysis (Word Clouds)
 Extracted feature insights clearly differentiate the semantic profiles of both message categories:
 
-- **Ham Cluster Profile:** Focused on interpersonal communications (`ok`, `got`, `come`, `love`, `time`, `need`).
-- **Spam Cluster Profile:** Focused on transactional urgency, incentives, and financial calls to action (`free`, `call`, `text`, `reply`, `mobile`, `prize`, `cash`, `urgent`).
+- **Ham Cluster Profile:** Focused on interpersonal communications (ok, got, come, love, time, need).
+- **Spam Cluster Profile:** Focused on transactional urgency, incentives, and financial calls to action (free, call, text, reply, mobile, prize, cash, urgent).
 
 ## 4. Modeling & Performance
 The vectorized features were evaluated across standard classification algorithms, including Naive Bayes (MultinomialNB) and Logistic Regression. 
