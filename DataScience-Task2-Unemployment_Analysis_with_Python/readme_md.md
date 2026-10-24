@@ -63,7 +63,7 @@ This project performs an **Exploratory Data Analysis (EDA)** on unemployment dat
 
 ### 1. Data Cleaning & Inspection
 * **Completeness:** 0 missing values across all 9 features ($267 \times 9$ dataset shape).
-* **Type Conversion:** Successfully cast string date columns into standard Pandas `datetime64` types (`dayfirst=True`).
+* **Type Conversion:** Successfully cast string date columns into standard Pandas datetime64 types (dayfirst=True).
 
 ### 2. Regional Analysis (Top 10 Unemployed States)
 * **Insight:** **Haryana** recorded the highest average unemployment rate ($\approx 27.48\%$), followed by **Tripura** ($\approx 25.06\%$), **Jharkhand** ($\approx 19.54\%$), and **Bihar** ($\approx 19.47\%$).
