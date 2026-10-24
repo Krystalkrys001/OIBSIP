@@ -70,7 +70,7 @@ The dataset was divided into training ($N=160$) and test ($N=40$) sets using ran
 
 ### Mathematical Model Equation:
 
-$$\hat{Y}_{\text{Sales}} = 2.9791 + 0.044730(\text{TV}) + 0.189195(\text{Radio}) + 0.002761(\text{Newspaper}) + #$$
+$$\hat{Y}_{\text{Sales}} = 2.9791 + 0.044730(\text{TV}) + 0.189195(\text{Radio}) + 0.002761(\text{Newspaper}) + \(\epsilon \)$$
 
 ---
 
