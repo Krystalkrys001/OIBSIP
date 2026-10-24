@@ -18,7 +18,7 @@ Rather than focusing solely on raw accuracy metrics, this project highlights **b
 
 ## 📊 Dataset Profile & Summary Statistics
 
-* **Dataset:** `Advertising.csv`
+* **Dataset:** Advertising.csv
 * **Total Observations:** 200 rows, 4 clean variables (after dropping the redundant index column `Unnamed: 0`).
 * **Missing Values:** 0 null entries (100% complete data).
 
@@ -48,8 +48,8 @@ Rather than focusing solely on raw accuracy metrics, this project highlights **b
 
 ## ⚙️ Model Architecture & Performance Results
 
-* **Algorithm:** Multiple Linear Regression (OLS) via `scikit-learn`
-* **Data Split:** 80% Train (160 rows), 20% Test (40 rows), `random_state=42`
+* **Algorithm:** Multiple Linear Regression (OLS) via scikit-learn
+* **Data Split:** 80% Train (160 rows), 20% Test (40 rows), random_state=42
 
 ### Performance Metrics on Test Set
 
@@ -90,13 +90,17 @@ OIBSIP/
 
 ## 🛠️ Environment & Setup
 
-```bash
-# Clone repository
-git clone https://github.com/your-username/OIBSIP.git
+```# Clone the repository
+git clone https://github.com
 cd OIBSIP/DataScience-Task5-SalesPrediction
 
-# Ensure compatible dependencies
-pip install "numpy<2" pandas matplotlib seaborn scikit-learn
+# Create a virtual environment (Best Practice)
+python -m venv venv
+source venv/bin/activate  # On Windows use: venv\Scripts\activate
+
+# Install strictly verified compatible dependencies
+pip install "numpy<2" pandas matplotlib seaborn scikit-learn jupyter
+
 ```
 
 ---
