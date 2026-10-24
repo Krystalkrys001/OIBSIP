@@ -21,24 +21,24 @@ This report delivers an empirical analysis of the labor market dynamics across I
 
 ## 2. Dataset Architecture & Quality Assurance
 
-The study evaluated the primary dataset (`Unemployment_Rate_upto_11_2020.csv`), comprising **267 observations** and **9 attributes**.
+The study evaluated the primary dataset (Unemployment_Rate_upto_11_2020.csv), comprising **267 observations** and **9 attributes**.
 
 ### 2.1 Schema & Feature Description
 | Feature Name | Storage Type | Description |
 | :--- | :--- | :--- |
-| `Region` | Categorical (`object`) | Name of the State / Union Territory |
-| `Date` | Datetime (`datetime64[ns]`) | Observation month end date |
-| `Frequency` | Categorical (`object`) | Measurement frequency (Monthly) |
-| `Estimated Unemployment Rate (%)` | Continuous (`float64`) | Unemployed percentage of active labor force |
-| `Estimated Employed` | Discrete (`int64`) | Absolute count of employed persons |
-| `Estimated Labour Participation Rate (%)` | Continuous (`float64`) | Percentage of working-age population in labor pool |
-| `Region.1` | Categorical (`object`) | Broad geographic zone (North, South, East, West, North East) |
-| `longitude` / `latitude` | Spatial (`float64`) | Geographic coordinates |
+| Region | Categorical (object) | Name of the State / Union Territory |
+| Date | Datetime (datetime64[ns]) | Observation month end date |
+| Frequency` | Categorical (object) | Measurement frequency (Monthly) |
+| Estimated Unemployment Rate (%) | Continuous (float64) | Unemployed percentage of active labor force |
+| Estimated Employed | Discrete (int64) | Absolute count of employed persons |
+| Estimated Labour Participation Rate (%) | Continuous (float64) | Percentage of working-age population in labor pool |
+| Region.1 | Categorical (object) | Broad geographic zone (North, South, East, West, North East) |
+| longitude / `latitude` | Spatial (float64) | Geographic coordinates |
 
 ### 2.2 Data Preprocessing Steps
 1. **String Whitespace Stripping:** Leading and trailing whitespaces in column names were removed to enable clean programmatic access.
 2. **Missing Value Verification:** Confirmed $0$ missing values across all 267 rows.
-3. **Datetime Parsing:** Converted string dates to ISO standard datetime objects with explicit `dayfirst=True` settings.
+3. **Datetime Parsing:** Converted string dates to ISO standard datetime objects with explicit dayfirst=True settings.
 
 ---
 
