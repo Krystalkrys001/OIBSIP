@@ -1,4 +1,4 @@
-# Comprehensive Project Report: Sales Prediction & Marketing ROI Optimization
+# Comprehensive Project Report: Sales Prediction with Python
 
 **Program:** Oasis Infobyte Data Science Internship (OIBSIP)  
 **Task:** Task 5 – Sales Prediction Using Python  
