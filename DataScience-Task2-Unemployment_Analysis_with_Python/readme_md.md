@@ -15,16 +15,16 @@ This project performs an **Exploratory Data Analysis (EDA)** on unemployment dat
 ---
 
 ## 📊 Dataset Details
-* **Dataset Name:** `Unemployment_Rate_upto_11_2020.csv` / `Unemployment in India.csv`
+* **Dataset Name:** Unemployment_Rate_upto_11_2020.csv / Unemployment in India.csv
 * **Source:** Kaggle
 * **Records:** 267 entries across Indian states/regions (Monthly granularity, Jan 2020 – Oct 2020)
 * **Key Attributes:**
-  * `Region`: Name of the state/union territory.
-  * `Date`: Date of monthly observation.
-  * `Estimated Unemployment Rate (%)`: Percentage of the unemployed labor force.
-  * `Estimated Employed`: Total count of employed individuals.
-  * `Estimated Labour Participation Rate (%)`: Percentage of the working-age population participating in the labor force.
-  * `Region.1`: Geographic zone (North, South, East, West, North East).
+  * Region: Name of the state/union territory.
+  * Date: Date of monthly observation.
+  * Estimated Unemployment Rate (%): Percentage of the unemployed labor force.
+  * Estimated Employed: Total count of employed individuals.
+  * Estimated Labour Participation Rate (%): Percentage of the working-age population participating in the labor force.
+  * Region.1: Geographic zone (North, South, East, West, North East).
 
 ---
 
@@ -32,10 +32,10 @@ This project performs an **Exploratory Data Analysis (EDA)** on unemployment dat
 * **Language:** Python 3.12+
 * **Environment:** Jupyter Notebook / Anaconda
 * **Libraries:**
-  * `pandas` — Data manipulation, aggregation, and datetime processing.
-  * `numpy` — Array operations and quantitative calculations.
-  * `matplotlib` — Base plotting and line chart customization.
-  * `seaborn` — Statistical visualizations, heatmaps, and bar charts.
+  * pandas — Data manipulation, aggregation, and datetime processing.
+  * numpy — Array operations and quantitative calculations.
+  * matplotlib — Base plotting and line chart customization.
+  * seaborn — Statistical visualizations, heatmaps, and bar charts.
 
 ---
 
