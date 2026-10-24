@@ -2,7 +2,7 @@
 
 **Author:** Data Science & Analytics Team  
 **Date:** October 2026  
-**Dataset:** Fisher's Iris Dataset (`sklearn.datasets.load_iris`)  
+**Dataset:** Fisher's Iris Dataset (sklearn.datasets.load_iris)  
 **Status:** Complete Analysis  
 
 ---
@@ -19,14 +19,14 @@ An in-depth exploratory data analysis (EDA) was performed on the Iris dataset. T
 * **Total Instances:** 150 records
 * **Feature Count:** 4 continuous continuous measurements, 1 target class indicator
 * **Class Distribution:** Perfectly balanced across 3 species
-  * **Setosa (`0`):** 50 samples (33.3%)
-  * **Versicolor (`1`):** 50 samples (33.3%)
-  * **Virginica (`2`):** 50 samples (33.3%)
+  * **Setosa (0):** 50 samples (33.3%)
+  * **Versicolor (1):** 50 samples (33.3%)
+  * **Virginica (2):** 50 samples (33.3%)
 
 ### 1.2 Data Hygiene & Integrity Audit
 * **Missing/Null Values:** $0\%$ across all fields.
-* **Data Types:** All continuous features are standard IEEE 754 64-bit floating-point numbers (`float64`).
-* **Outlier Presence:** Minimal outliers detected primarily in `sepal width` (samples with width $> 4.0\text{ cm}$ or $< 2.2\text{ cm}$).
+* **Data Types:** All continuous features are standard IEEE 754 64-bit floating-point numbers (float64).
+* **Outlier Presence:** Minimal outliers detected primarily in sepal width (samples with width $> 4.0\text{ cm}$ or $< 2.2\text{ cm}$).
 
 ---
 
@@ -48,19 +48,19 @@ $$\begin{array}{|l|c|c|c|c|c|}
 ### Key Distributional Observations
 
 1. **Bimodality in Petal Length:**
-   * The overall distribution of `petal length` is bimodal. 
+   * The overall distribution of petal length is bimodal. 
    * A distinct cluster exists between $1.0\text{ cm}$ and $1.9\text{ cm}$ corresponding exclusively to *Setosa*.
    * A second cluster spans $3.0\text{ cm}$ to $6.9\text{ cm}$, containing *Versicolor* and *Virginica*.
 
 2. **Sepal Dimension Uniformity:**
-   * `sepal width` exhibits a Gaussian (normal) distribution centered around $\mu = 3.06\text{ cm}$ with low standard deviation ($\sigma = 0.44\text{ cm}$).
-   * `sepal length` shows greater overlap among species compared to petal metrics.
+   * sepal width exhibits a Gaussian (normal) distribution centered around $\mu = 3.06\text{ cm}$ with low standard deviation ($\sigma = 0.44\text{ cm}$).
+   * sepal length shows greater overlap among species compared to petal metrics.
 
 ---
 
 ## 3. Class-Specific Comparison
 
-An analysis grouped by `species` highlights clear boundaries between classes:
+An analysis grouped by species highlights clear boundaries between classes:
 
 ### Group Means by Species
 
