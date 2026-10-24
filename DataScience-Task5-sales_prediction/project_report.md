@@ -1,4 +1,4 @@
-# Comprehensive Project Report: Sales Prediction with Python
+# Comprehensive Project Report: Sales Prediction using Python
 
 **Program:** Oasis Infobyte Data Science Internship (OIBSIP)  
 **Task:** Task 5 – Sales Prediction Using Python  
