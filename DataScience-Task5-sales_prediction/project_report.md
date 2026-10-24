@@ -2,7 +2,7 @@
 
 **Program:** Oasis Infobyte Data Science Internship (OIBSIP)  
 **Task:** Task 5 – Sales Prediction Using Python  
-**Dataset:** `Advertising.csv` (200 records)  
+**Dataset:** Advertising.csv (200 records)  
 
 ---
 
@@ -10,7 +10,7 @@
 
 This report presents a multiple linear regression analysis designed to quantify the relationship between advertising investments across **TV**, **Radio**, and **Newspaper** channels and resulting **Product Sales**.
 
-Utilizing Python, `pandas`, and `scikit-learn`, an Ordinary Least Squares (OLS) model was built on an 80/20 train-test split (160 training rows, 40 test rows). The model achieved an **$R^2$ score of 0.8994** and a **Root Mean Squared Error (RMSE) of 1.7816**. 
+Utilizing Python, pandas, and scikit-learn, an Ordinary Least Squares (OLS) model was built on an 80/20 train-test split (160 training rows, 40 test rows). The model achieved an **$R^2$ score of 0.8994** and a **Root Mean Squared Error (RMSE) of 1.7816**. 
 
 Feature coefficient analysis demonstrates that **Radio advertising delivers the highest marginal ROI ($0.1892$)**, **TV drives baseline sales volume ($0.0447$)**, and **Newspaper advertising yields virtually no marginal sales return ($0.0028$)**.
 
@@ -21,7 +21,7 @@ Feature coefficient analysis demonstrates that **Radio advertising delivers the 
 The dataset consists of 200 observations representing sales figures across different media budget combinations.
 
 ### Data Audit Findings:
-1. **Redundant Column Removal:** The initial CSV file contained an un-named index column (`Unnamed: 0`) ranging from 1 to 200, which was removed to prevent bias in regression weights.
+1. **Redundant Column Removal:** The initial CSV file contained an un-named index column (Unnamed: 0) ranging from 1 to 200, which was removed to prevent bias in regression weights.
 2. **Missing Value Audit:** All 200 records contained complete numerical values across all four variables.
 3. **Data Types:** All features represent continuous float values.
 
@@ -58,27 +58,27 @@ To test the assumption of linearity required for regression models, pairwise sca
 
 ## 4. Regression Modeling & Empirical Results
 
-The dataset was divided into training ($N=160$) and test ($N=40$) sets using `random_state=42`.
+The dataset was divided into training ($N=160$) and test ($N=40$) sets using random_state=42.
 
 ### Empirical Results Summary:
-* **Intercept ($\beta_0$):** `2.9791` (Baseline sales without media spend)
-* **TV Coefficient ($\beta_1$):** `0.044730`
-* **Radio Coefficient ($\beta_2$):** `0.189195`
-* **Newspaper Coefficient ($\beta_3$):** `0.002761`
-* **$R^2$ Score:** `0.8994`
-* **RMSE:** `1.7816`
+* **Intercept ($\beta_0$):** 2.9791 (Baseline sales without media spend)
+* **TV Coefficient ($\beta_1$):** 0.044730
+* **Radio Coefficient ($\beta_2$):** 0.189195
+* **Newspaper Coefficient ($\beta_3$):** 0.002761
+* **$R^2$ Score:** 0.8994
+* **RMSE:** 1.7816
 
 ### Mathematical Model Equation:
 
-$$\hat{Y}_{\text{Sales}} = 2.9791 + 0.044730(\text{TV}) + 0.189195(\text{Radio}) + 0.002761(\text{Newspaper})$$
+$$\hat{Y}_{\text{Sales}} = 2.9791 + 0.044730(\text{TV}) + 0.189195(\text{Radio}) + 0.002761(\text{Newspaper}) + #$$
 
 ---
 
 ## 5. Strategic Business Recommendations (Marketing Attribution)
 
-1. **Reallocate Newspaper Capital:** The coefficient for Newspaper ($0.0028$) indicates that spending $10,000 on newspaper ads yields under 28 units in sales. Marketing spend in newspaper ads should be cut and reallocated.
-2. **Double Down on Radio Efficiency:** Radio yields an incremental boost of **189.2 units per $1,000 spend** ($\beta_2 = 0.1892$), making it the most cost-effective channel for driving marginal growth.
-3. **Maintain TV as Core Anchor:** TV drives the baseline sales volume due to its large reach and high correlation ($r = 0.782$), making it essential for maintaining brand presence.
+1. **Terminate Newspaper Capital Allocation:** The structural coefficient for Newspaper (\(0.0028\)) indicates that investing $10,000 yields a negligible <28 units in sales. Newspaper ad spend should be aggressively cut to zero..
+2. **Maximize Radio Efficiency (Top ROI Pick):** Radio delivers your highest marginal efficiency, yielding an incremental 189.2 units per $1,000 spent (\(\beta_2 = 0.1892\)). This is your prime growth accelerator.
+3. **Anchor TV for High-Volume Reach:** • While Radio is more efficient dollar-for-dollar, TV maintains the strongest linear correlation (\(r = 0.782\)) to top-line volume. Maintain TV as your baseline foundational engine.
 
 ---
 
